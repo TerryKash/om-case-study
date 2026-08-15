@@ -13,7 +13,9 @@ locals {
 resource "example_resource" "this" {
   for_each = local.resources
   name     = "example-${each.key}"
-}   
+}
+   
+---
 
 ## Step 2: Migrate State Entries using moved blocks
 
