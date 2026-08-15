@@ -14,7 +14,8 @@ resource "example_resource" "this" {
   for_each = local.resources
   name     = "example-${each.key}"
 }
-   
+```
+
 ---
 
 ## Step 2: Migrate State Entries using moved blocks
@@ -28,7 +29,7 @@ moved {
   from = example_resource.this[2]
   to   = example_resource.this["res-3"]
 }
-
+```
 # destroy index 1 manually 
 terraform destroy -target='example_resource.this[1]'
 
